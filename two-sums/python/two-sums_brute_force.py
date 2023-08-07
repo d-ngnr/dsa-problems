@@ -1,5 +1,6 @@
-class BruteForce(object):
-    def twoSum(self, nums, target):
+from typing import List
+class BruteForceApproach(object):
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         """
         :type nums: List[int]
         :type target: int
@@ -13,7 +14,7 @@ class BruteForce(object):
         return [] # return nothig if the nothing satisfies the condition
     
 def main():
-    bf = BruteForce() # create an instance of BruteForce
+    bf = BruteForceApproach() # create an instance of BruteForce
     nums = [2,7,11,15] # declare the list of numbers
     target = 9 # declare the target sum of numbers
     print(bf.twoSum(nums, target)) # print the function return
