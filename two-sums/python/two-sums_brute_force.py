@@ -11,7 +11,7 @@ class BruteForceApproach(object):
             for j in range(i + 1, n): # iterate the elements from the next element to the last element
                 if nums[i] + nums[j] == target: # add the numbers and check if it equals the target
                     return [i,j] # return the indices if the sum of numbers matches the target
-        return [] # return nothig if the nothing satisfies the condition
+        return [] # return an empty set if the nothing satisfies the condition
     
 def main():
     bf = BruteForceApproach() # create an instance of BruteForce

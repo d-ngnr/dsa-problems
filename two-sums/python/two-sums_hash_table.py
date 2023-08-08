@@ -1,20 +1,20 @@
 from typing import List
 class HashTableApproach(object):
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        numMap = {}
-        n = len(nums)
+        numMap = {} # create a map to hold the numbers
+        n = len(nums) # get the length of the list
         
-        for i in range(n):
-            numMap[nums[i]] = i
+        for i in range(n): # iterate up to the lenght of the list
+            numMap[nums[i]] = i # add the numbers to the map e.g. {2:0, 7:1, 11:2, 15:3}
         
-        for i in range(n):
-            complement = target - nums[i]
-            if complement in numMap and numMap[complement] != i:
-                return [i, numMap[complement]]
-        return [] 
+        for i in range(n): # iterate up to the lenght of the list
+            complement = target - nums[i] # calculate the complement by substracting the numbers from the target value
+            if complement in numMap and numMap[complement] != i: # if the complement is in the map and its index is not the same as the iterator
+                return [i, numMap[complement]] # return the indices of the iterator and the complement
+        return [] # return an empty set if the nothing satisfies the condition
     
 def main():
-    bf = HashTableApproach() # create an instance of BruteForce
+    bf = HashTableApproach() # create an instance of HashTableApproach
     nums = [2,7,11,15] # declare the list of numbers
     target = 9 # declare the target sum of numbers
     print(bf.twoSum(nums, target)) # print the function return
