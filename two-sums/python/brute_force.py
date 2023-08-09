@@ -1,11 +1,6 @@
 from typing import List
 class BruteForceApproach(object):
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
         n = len(nums) # get the length of the list
         for i in range(n - 1): # iterate the elements in the array starting from index 0 to the 2nd to the last element
             for j in range(i + 1, n): # iterate the elements from the next element to the last element

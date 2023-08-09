@@ -1,23 +1,34 @@
-from typing import List
+from typing import ListNode
 class BruteForceApproach(object):
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        n = len(nums) # get the length of the list
-        for i in range(n - 1): # iterate the elements in the array starting from index 0 to the 2nd to the last element
-            for j in range(i + 1, n): # iterate the elements from the next element to the last element
-                if nums[i] + nums[j] == target: # add the numbers and check if it equals the target
-                    return [i,j] # return the indices if the sum of numbers matches the target
-        return [] # return an empty set if the nothing satisfies the condition
+    def addTwoNumbers(self, listNode1: ListNode, listNode2: ListNode) -> ListNode:
+        dummyHead = ListNode(0)
+        tail = dummyHead
+        carry = 0
+        
+        while listNode1 is not None or listNode2 is not None or carry != 0:
+            digit1 = listNode1.val if listNode1 is not None else 0
+            digit2 = listNode2.val if listNode2 is not None else 0
+            
+            sum = digit1 + digit2 + carry
+            digit = sum % 10
+            carry = sum // 10
+            
+            newNode = ListNode(digit)
+            tail.next = newNode
+            tail = tail.next
+            
+            listNode1 = listNode1.next if listNode1 is not None else None
+            listNode2 = listNode2.next if listNode2 is not None else None
+        
+        result = dummyHead.next
+        dummyHead.next = None
+        return result
     
 def main():
     bf = BruteForceApproach() # create an instance of BruteForce
     nums = [2,7,11,15] # declare the list of numbers
     target = 9 # declare the target sum of numbers
-    print(bf.twoSum(nums, target)) # print the function return
+    print(bf.addTwoNumbers(nums, target)) # print the function return
     
 if __name__ == '__main__':
     main()
