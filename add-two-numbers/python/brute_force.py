@@ -1,4 +1,10 @@
-from typing import ListNode
+# from typing import ListNode
+# Definition for singly-linked list.
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+         self.val = val
+         self.next = next
+         
 class BruteForceApproach(object):
     def addTwoNumbers(self, listNode1: ListNode, listNode2: ListNode) -> ListNode:
         dummyHead = ListNode(0)
